@@ -54,15 +54,15 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
             SQLiteDatabase db = bd.getWritableDatabase();
 
             String sql = "insert into eventos" +
-                    "(nombreEvento, ubicacion, fechadesde, horadesde,fechahasta,horahasta," +
-            "descripcion) values('" +
+                    "(nombreEvento, ubicacion, fechadesde, horadesde,fechahasta, horahasta," +
+            "descripción) values('" +
             nombreEvento.getText()+
             "','" + ubicacion.getText() +
             "','" + fechadesde.getText() +
             "','" + horadesde.getText() +
                     "','" + fechahasta.getText() +
                     "','" + horahasta.getText() +
-                    "','" + descripcion.getText() + ")";
+                    "','" + descripcion.getText() + "')";
 
             try {
                 db.execSQL(sql);
