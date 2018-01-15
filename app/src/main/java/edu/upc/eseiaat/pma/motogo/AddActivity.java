@@ -22,7 +22,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_add);
 
         nombreEvento=(EditText) findViewById(R.id.edtNombreEvento);
-        ubicacion=(EditText) findViewById(R.id.edtUbicación);
+        ubicacion=(EditText) findViewById(R.id.edtUbicacion);
         fechadesde=(EditText) findViewById(R.id.edtFechaDesde);
         fechahasta=(EditText) findViewById(R.id.edtFechaHasta);
         horadesde=(EditText) findViewById(R.id.edtHoraInicio);
