@@ -41,18 +41,18 @@ public class DateActivity extends AppCompatActivity implements AdapterView.OnIte
         String sql = "select * from eventos where fechadesde='"+cadena+"'";
         Cursor c;
 
-        String nombre, fechadesde, fechahasta, descripcion, ubicacion;
+        String nombreEvento, fechadesde, fechahasta, descripcion, ubicacion;
         try {
             c=db.rawQuery(sql, null);
             arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
             if(c.moveToFirst()){
                 do{
-                    nombre=c.getString(1);
+                    nombreEvento=c.getString(1);
                     ubicacion=c.getString(2);
                     fechadesde=c.getString(3);
                     fechahasta=c.getString(5);
                     descripcion=c.getString(7);
-                    arrayAdapter.add(nombre+", "+ubicacion+", "+fechadesde+", "+fechahasta+", "+descripcion);
+                    arrayAdapter.add(nombreEvento+", "+ubicacion+", "+fechadesde+", "+fechahasta+", "+descripcion);
 
                 }while(c.moveToNext());
                 listView.setAdapter(arrayAdapter);

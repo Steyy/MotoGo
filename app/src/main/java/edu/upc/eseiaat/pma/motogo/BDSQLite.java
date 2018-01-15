@@ -11,14 +11,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class BDSQLite extends SQLiteOpenHelper {
 
     private String sql = "create table eventos("+
-            "idEvento int identity" +
+            "idEvento int identity," +
             "nombreEvento varchar (40)," +
             "ubicacion varchar (60)," +
             "fechadesde date," +
             "horadesde time," +
             "fechahasta date," +
             "horahasta time," +
-            "descripción varchar(60))";
+            "descripcion varchar(60))";
 
     public BDSQLite(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

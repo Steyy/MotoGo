@@ -22,7 +22,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_add);
 
         nombreEvento=(EditText) findViewById(R.id.edtNombreEvento);
-        ubicacion=(EditText) findViewById(R.id.edtUbicación);
+        ubicacion=(EditText) findViewById(R.id.edtUbicacion);
         fechadesde=(EditText) findViewById(R.id.edtFechaDesde);
         fechahasta=(EditText) findViewById(R.id.edtFechaHasta);
         horadesde=(EditText) findViewById(R.id.edtHoraInicio);
@@ -31,6 +31,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         Bundle bundle = getIntent().getExtras();
         int dia=0, mes=0, anio=0;
+
         dia=bundle.getInt("dia");
         mes=bundle.getInt("mes");
         anio=bundle.getInt("anio");
@@ -54,15 +55,15 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
             SQLiteDatabase db = bd.getWritableDatabase();
 
             String sql = "insert into eventos" +
-                    "(nombreEvento, ubicacion, fechadesde, horadesde,fechahasta,horahasta," +
-            "descripcion) values('" +
-            nombreEvento.getText()+
-            "','" + ubicacion.getText() +
-            "','" + fechadesde.getText() +
-            "','" + horadesde.getText() +
+                    "(nombreEvento, ubicacion, fechadesde, horadesde, fechahasta, horahasta," +
+                    "descripcion) values('" +
+                    nombreEvento.getText()+
+                    "','" + ubicacion.getText() +
+                    "','" + fechadesde.getText() +
+                    "','" + horadesde.getText() +
                     "','" + fechahasta.getText() +
                     "','" + horahasta.getText() +
-                    "','" + descripcion.getText() + ")";
+                    "','" + descripcion.getText() + "')";
 
             try {
                 db.execSQL(sql);
@@ -76,13 +77,12 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 descripcion.setText("");
 
             }catch (Exception e) {
-                Toast.makeText(getApplication(), "Error"+ e.getMessage(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplication(), "Error"+ e.getMessage(),Toast.LENGTH_LONG).show();
             }
 
             this.finish();
 
-        }
-        else {
+        } else {
             this.finish();
             return;
         }
