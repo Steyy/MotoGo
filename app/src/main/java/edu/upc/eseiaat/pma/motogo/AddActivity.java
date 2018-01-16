@@ -54,13 +54,13 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
             BDSQLite bd = new BDSQLite(getApplication(), "Agenda",null,1);
             SQLiteDatabase db = bd.getWritableDatabase();
 
-            String sql = "insert into eventos" +
-                    "(nombreEvento, ubicacion, fechadesde, horadesde,fechahasta, horahasta," +
-            "descripcion) values('" +
-            nombreEvento.getText()+
-            "','" + ubicacion.getText() +
-            "','" + fechadesde.getText() +
-            "','" + horadesde.getText() +
+            String sql = "Insert into eventos" +
+                    "(nombreEvento, ubicacion, fechadesde, horadesde, fechahasta, horahasta," +
+                    "descripcion) values('" +
+                    nombreEvento.getText() +
+                    "','" + ubicacion.getText() +
+                    "','" + fechadesde.getText() +
+                    "','" + horadesde.getText() +
                     "','" + fechahasta.getText() +
                     "','" + horahasta.getText() +
                     "','" + descripcion.getText() + "')";

@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class BDSQLite extends SQLiteOpenHelper {
 
     private String sql = "create table eventos("+
-            "idEvento int identity," +
+            "idEvent int identity," +
             "nombreEvento varchar (40)," +
             "ubicacion varchar (60)," +
             "fechadesde date," +
@@ -19,7 +19,7 @@ public class BDSQLite extends SQLiteOpenHelper {
             "fechahasta date," +
             "horahasta time," +
             "descripcion varchar(60));";
-  /* private String sql = "CREATE table eventos (idEvento INTEGER not null auto_increment ," +
+  /*private String sql = "CREATE table eventos (idEvento INTEGER not null auto_increment ," +
             "nombreEvento varchar(40)," +
             "ubicacion varchar(60)," +
             "fechadesde text," +
