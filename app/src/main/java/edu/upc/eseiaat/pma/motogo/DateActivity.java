@@ -39,6 +39,7 @@ public class DateActivity extends AppCompatActivity implements AdapterView.OnIte
         db = bd.getReadableDatabase();
 
         String sql = "select * from eventos where fechadesde='"+cadena+"'";
+        //String sql ="select * from eventos;";
         Cursor c;
 
         String nombreEvento, fechadesde, fechahasta, descripcion, ubicacion;
@@ -72,9 +73,11 @@ public class DateActivity extends AppCompatActivity implements AdapterView.OnIte
 
         String []datos = dato.split(", ");
 
-         String sql="delete from eventos where nombreEvento='"+datos[0]+"' and" +
-                 " ubicacion='"+datos[1]+"' and fechadesde='"+datos[2]+"' and" +
-                 "fechahasta='"+datos[3]+"' and description='"+datos[4]+"'";
+         /*String sql="delete from eventos where nombreEvento='"+datos[1]+"' and" +
+                 " ubicacion='"+datos[2]+"' and fechadesde='"+datos[3]+"' and" +
+                 "fechahasta='"+datos[5]+"' and description='"+datos[7]+"'";*/
+
+       String sql="delete from eventos";// where nombreEvento='"+datos[0]+"' and ubicacion '"+datos[1]+"'";
 
         try{
             arrayAdapter.remove(dato);
@@ -89,7 +92,7 @@ public class DateActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    @Override
+   @Override
     public boolean onItemLongClick(final AdapterView<?> adapterView, View view, int i, long l) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         CharSequence []items = new CharSequence[2];
@@ -100,8 +103,9 @@ public class DateActivity extends AppCompatActivity implements AdapterView.OnIte
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                         if (i==0){
+
                             //eliminar cita
-                            eliminar(adapterView.getItemAtPosition(i).toString());
+                            eliminar(adapterView.getItemAtPosition(0).toString());
                         }
 
                     }

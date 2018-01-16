@@ -1,5 +1,6 @@
 package edu.upc.eseiaat.pma.motogo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,13 +12,16 @@ import android.widget.EditText;
 
 public class NameActivity extends AppCompatActivity {
 
+    //public static final String USER_NAME = "MyUserName";
+
+    //String usuario;
+
     EditText euser;
     Button btnsave;
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name);
@@ -34,6 +38,10 @@ public class NameActivity extends AppCompatActivity {
                 Bundle b = new Bundle();
                 b.putString("NOMBRE", euser.getText().toString());
 
+               /* SharedPreferences settings = getSharedPreferences(USER_NAME, 0);
+                String user = settings.getString("euser", null);*/
+
+
                 intent.putExtras(b);
 
                 startActivity(intent);
@@ -43,6 +51,21 @@ public class NameActivity extends AppCompatActivity {
         });
 
     }
+
+   /* @Override
+    protected void onStop() {
+        super.onStop();
+
+        usuario = euser.toString();
+
+        SharedPreferences settings = getSharedPreferences(USER_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putStringSet("euser", usuario);
+
+        editor.commit();
+
+    }*/
+
     }
 
 

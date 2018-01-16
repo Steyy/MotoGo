@@ -1,6 +1,7 @@
 package edu.upc.eseiaat.pma.motogo;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,7 +56,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
             String sql = "insert into eventos" +
                     "(nombreEvento, ubicacion, fechadesde, horadesde,fechahasta, horahasta," +
-            "descripción) values('" +
+            "descripcion) values('" +
             nombreEvento.getText()+
             "','" + ubicacion.getText() +
             "','" + fechadesde.getText() +
@@ -63,6 +64,9 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                     "','" + fechahasta.getText() +
                     "','" + horahasta.getText() +
                     "','" + descripcion.getText() + "')";
+
+           //String sql ="INSERT into eventos values(1, 'aaa', 'aaa', 'aaa', 'aa', 'aa', 'aa', 'aa');";
+
 
             try {
                 db.execSQL(sql);
@@ -74,6 +78,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 horadesde.setText("");
                 horahasta.setText("");
                 descripcion.setText("");
+
+
 
             }catch (Exception e) {
                 Toast.makeText(getApplication(), "Error"+ e.getMessage(),Toast.LENGTH_SHORT).show();

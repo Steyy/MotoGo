@@ -18,7 +18,15 @@ public class BDSQLite extends SQLiteOpenHelper {
             "horadesde time," +
             "fechahasta date," +
             "horahasta time," +
-            "descripcion varchar(60))";
+            "descripcion varchar(60));";
+  /* private String sql = "CREATE table eventos (idEvento INTEGER not null auto_increment ," +
+            "nombreEvento varchar(40)," +
+            "ubicacion varchar(60)," +
+            "fechadesde text," +
+            "horadesde text," +
+            "fechahasta text," +
+            "horahasta text," +
+            "descripcion text, PRIMARY KEY (idEvento));";*/
 
     public BDSQLite(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -31,6 +39,6 @@ public class BDSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        onCreate(db);
     }
 }
